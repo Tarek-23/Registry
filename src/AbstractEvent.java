@@ -2,9 +2,9 @@ import java.util.Date;
 
 public abstract class AbstractEvent {
 
-    private String description;
-    private Date start_date;
-    private Date end_date;
+    protected String description;
+    protected Date start_date;
+    protected Date end_date;
 
     public String getDescription() {
         return description;
