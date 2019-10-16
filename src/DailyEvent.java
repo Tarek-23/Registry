@@ -12,20 +12,25 @@ public class DailyEvent extends AbstractEvent{
     }
 
     private int recurrences;
+    private int reps = 0;
 
     @Override
     public void init() {
-
+        reps = 0;
     }
 
     @Override
-    public boolean hasMoreOccurences() {
-        return false;
+    public boolean hasMoreOccurrences() {
+        return reps < recurrences;
     }
 
     @Override
-    public Date nextOccurence(){
-        return null;
+    public Date nextOccurrence(){
+        if (hasMoreOccurrences()) {
+           // reps++;
+            return addDays(start_time, ++reps);
+        }
+        else return addDays(start_time, reps);
     }
 
 }
