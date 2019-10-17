@@ -46,7 +46,7 @@ public abstract class AbstractEvent {
         c.add(Calendar.DATE, days);
 
         // convert calendar to date
-        Date currentDatePlusOne = c.getTime();
-        return currentDatePlusOne;
+        Date new_date = c.getTime();
+        return new_date;
     }
 }
