@@ -134,6 +134,22 @@ public class Planner implements manageObserver {
         }
 
     }
+    
+    public String toString() {
+        
+    	String out = "Planner Content: \n";
+    	
+    	for(int i = 0; i<cur_size;i++)
+    	{
+    		AbstractEvent event = eventAt(i);
+    		out += event.toString();
+    		out+= "\n";
+    		
+    	}
+    	
+    	return out;
+    		
+    }
 
  
 
@@ -162,8 +178,16 @@ public class Planner implements manageObserver {
     
 
     public void notifyOb(String notification) {
-
-        for (Iterator<Observer> it = observerList.iterator(); it.hasNext();) {
+    	
+    	
+//    	for (Observer o: observerList)
+//    		
+//    		o.showmsg(notification);
+    	
+    Iterator<Observer> it = observerList.iterator();
+    
+       while(it.hasNext()) 
+       {
 
             Observer o = it.next();
 
